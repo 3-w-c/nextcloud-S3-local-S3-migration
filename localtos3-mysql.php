@@ -520,6 +520,9 @@ else {
         $prev = $new;
         echo $prev;
       }
+    } catch (PDOException $e) {
+      echo "\nERROR: Query failed: " . $e->getMessage();
+      die;
     }
   }
   if (!$showinfo) {
